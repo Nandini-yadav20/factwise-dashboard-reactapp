@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from "react";
 import { AgGridReact } from "ag-grid-react";
 import "ag-grid-community/styles/ag-theme-quartz.css";
-
+import { TbDeviceAnalytics } from "react-icons/tb";
 import { ModuleRegistry, AllCommunityModule } from "ag-grid-community";
 ModuleRegistry.registerModules([AllCommunityModule]);
 
@@ -39,8 +39,8 @@ const Dashboard = () => {
   return (
     <div className="dashboard-container">
       
-      <h2 style={{ textAlign: "center", marginBottom: "15px" }}>
-        📊 FactWise Employee Dashboard
+      <h2 style={{ textAlign: "center", marginBottom: "15px"}}>
+        <TbDeviceAnalytics /> FactWise Employee Dashboard
       </h2>
 
       <div

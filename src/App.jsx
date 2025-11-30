@@ -10,6 +10,7 @@ import { FaMoneyBill1Wave } from "react-icons/fa6";
 import { SiGoogleanalytics } from "react-icons/si";
 import { TbDeviceAnalytics } from "react-icons/tb";
 import { CiViewTable } from "react-icons/ci";
+import { IoMdPersonAdd } from "react-icons/io";
 import { MdManageAccounts } from "react-icons/md";
 import { IoAnalyticsOutline } from "react-icons/io5";
 import { VscVmActive } from "react-icons/vsc";
@@ -285,7 +286,7 @@ function App() {
                     📥 Export Data
                   </ActionButton>
                   <ActionButton darkMode={darkMode}>
-                    ➕ Add Employee
+                    <IoMdPersonAdd />
                   </ActionButton>
                 </div>
               </div>
