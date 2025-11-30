@@ -3,7 +3,22 @@ import Dashboard from "./components/Dashboard"
 import StatsCard from "./components/StatCard"
 import AnalyticsDashboard from "./components/AnalyticsDashboard"
 import EmployeeData from "./Data/EmployeeData"
-
+import { LuSun, LuMoon } from "react-icons/lu"
+import { FaRegStar } from "react-icons/fa";
+import { IoHome } from "react-icons/io5";
+import { FaMoneyBill1Wave } from "react-icons/fa6";
+import { SiGoogleanalytics } from "react-icons/si";
+import { TbDeviceAnalytics } from "react-icons/tb";
+import { CiViewTable } from "react-icons/ci";
+import { MdManageAccounts } from "react-icons/md";
+import { IoAnalyticsOutline } from "react-icons/io5";
+import { VscVmActive } from "react-icons/vsc";
+import { SiCoinmarketcap } from "react-icons/si";
+import { MdEngineering } from "react-icons/md";
+import { BiSolidPurchaseTagAlt } from "react-icons/bi";
+import { FcManager } from "react-icons/fc";
+import { FaMoneyBillWaveAlt } from "react-icons/fa";
+import { BsRocketTakeoffFill } from "react-icons/bs";
 function App() {
   const [darkMode, setDarkMode] = useState(true);
   const [activeView, setActiveView] = useState('overview');
@@ -54,7 +69,7 @@ function App() {
                 justifyContent: 'center',
                 fontSize: '20px'
               }}>
-                📊
+                <SiGoogleanalytics />
               </div>
               <h1 style={{
                 margin: 0,
@@ -100,7 +115,10 @@ function App() {
                     }
                   }}
                 >
-                  {view === 'overview' ? '🏠 Overview' : view === 'table' ? '📋 Table' : '📈 Analytics'}
+            {view === 'overview' && <><IoHome /> Overview</>}
+{view === 'table' && <><CiViewTable /> Table</>}
+{view === 'analytics' && <><TbDeviceAnalytics /> Analytics</>}
+
                 </button>
               ))}
             </nav>
@@ -120,7 +138,7 @@ function App() {
                 transition: 'all 0.3s ease'
               }}
             >
-              {darkMode ? '☀️' : '🌙'}
+              {darkMode ?<LuSun /> : <LuMoon />}
             </button>
           </div>
         </header>
@@ -143,28 +161,28 @@ function App() {
                 <StatsCard
                   title="Total Employees"
                   value={totalEmployees}
-                  icon="👥"
+                  icon={<MdManageAccounts />}
                   color="#3b82f6"
                   darkMode={darkMode}
                 />
                 <StatsCard
                   title="Active Employees"
                   value={activeEmployees}
-                  icon="✅"
+                  icon={<VscVmActive />}
                   color="#10b981"
                   darkMode={darkMode}
                 />
                 <StatsCard
                   title="Avg. Salary"
                   value={`$${avgSalary.toLocaleString()}`}
-                  icon="💰"
+                  icon={<FaMoneyBill1Wave />}
                   color="#f59e0b"
                   darkMode={darkMode}
                 />
                 <StatsCard
                   title="Avg. Performance"
                   value={avgPerformance}
-                  icon="⭐"
+                  icon= {<FaRegStar />}
                   color="#8b5cf6"
                   darkMode={darkMode}
                 />
@@ -211,7 +229,7 @@ function App() {
                           fontSize: '24px',
                           marginBottom: '8px'
                         }}>
-                          {dept === 'Engineering' ? '⚙️' : dept === 'Marketing' ? '📢' : dept === 'Sales' ? '💼' : dept === 'HR' ? '👔' : '💵'}
+                          {dept === 'Engineering' ? <MdEngineering />: dept === 'Marketing' ? <SiCoinmarketcap /> : dept === 'Sales' ? <BiSolidPurchaseTagAlt /> : dept === 'HR' ? <FcManager /> : <FaMoneyBillWaveAlt />}
                         </div>
                         <h3 style={{
                           margin: '0 0 8px 0',
@@ -254,14 +272,14 @@ function App() {
                   fontWeight: '700',
                   color: darkMode ? '#e2e8f0' : '#1e293b'
                 }}>
-                  🚀 Quick Actions
+                  <BsRocketTakeoffFill /> Quick Actions
                 </h2>
                 <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
                   <ActionButton darkMode={darkMode} onClick={() => setActiveView('table')}>
                     📋 View Employee Table
                   </ActionButton>
                   <ActionButton darkMode={darkMode} onClick={() => setActiveView('analytics')}>
-                    📊 View Analytics
+                    <IoAnalyticsOutline />View Analytics
                   </ActionButton>
                   <ActionButton darkMode={darkMode}>
                     📥 Export Data

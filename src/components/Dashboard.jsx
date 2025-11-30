@@ -27,7 +27,7 @@ const Dashboard = () => {
     { field: "position", sortable: true, filter: true, flex: 1 },
     { field: "location", sortable: true, filter: true, flex: .9 },
 
-    // Custom Cell Renderers 
+    
     { field: "skills", headerName: "Skills", cellRenderer: SkillsRenderer, flex: 1.3 },
     { field: "isActive", headerName: "Status", cellRenderer: StatusRenderer, flex: 1 },
     { field: "performanceRating", headerName: "Performance", cellRenderer: PerformanceRenderer, flex: 1.2 },

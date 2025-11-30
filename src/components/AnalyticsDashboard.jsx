@@ -117,9 +117,17 @@ export default function AnalyticsDashboard({ darkMode = true }) {
           margin: 0,
           fontSize: '24px',
           fontWeight: '700',
-          color: darkMode ? '#e2e8f0' : '#1e293b'
+          color: darkMode ? '#e2e8f0' : '#1e293b',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '12px'
         }}>
-          📊 Advanced Analytics
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="18" y1="20" x2="18" y2="10"></line>
+            <line x1="12" y1="20" x2="12" y2="4"></line>
+            <line x1="6" y1="20" x2="6" y2="14"></line>
+          </svg>
+          Advanced Analytics
         </h1>
 
         <div style={{ display: 'flex', gap: '8px' }}>
@@ -160,28 +168,47 @@ export default function AnalyticsDashboard({ darkMode = true }) {
         <InsightCard 
           title="Avg Performance Rating" 
           value={avgPerformance} 
-          icon="⭐"
+          icon={
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+          }
           color="#3b82f6"
           darkMode={darkMode}
         />
         <InsightCard 
           title="Average Salary" 
-          value={`$${parseInt(avgSalary).toLocaleString()}`} 
-          icon="💰"
+          value={`${parseInt(avgSalary).toLocaleString()}`} 
+          icon={
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="12" y1="1" x2="12" y2="23"></line>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            </svg>
+          }
           color="#10b981"
           darkMode={darkMode}
         />
         <InsightCard 
           title="Top Performer" 
           value={`${topPerformer.firstName} (${topPerformer.performanceRating})`} 
-          icon="🏆"
+          icon={
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="8" r="7"></circle>
+              <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+            </svg>
+          }
           color="#f59e0b"
           darkMode={darkMode}
         />
         <InsightCard 
           title="Best ROI" 
           value={`${highValue.firstName} (${highValue.costEfficiency})`} 
-          icon="📈"
+          icon={
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+              <polyline points="17 6 23 6 23 12"></polyline>
+            </svg>
+          }
           color="#8b5cf6"
           darkMode={darkMode}
         />
@@ -191,7 +218,7 @@ export default function AnalyticsDashboard({ darkMode = true }) {
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(500px, 1fr))", gap: "24px" }}>
 
         {/* Top 10 Performance */}
-        <ChartCard title="🌟 Top 10 Performance Leaders" darkMode={darkMode}>
+        <ChartCard title="Top 10 Performance Leaders" darkMode={darkMode}>
           <ResponsiveContainer width="100%" height={320}>
             <BarChart data={performanceGraph}>
               <CartesianGrid strokeDasharray="3 3" stroke={darkMode ? '#334155' : '#e2e8f0'} />
@@ -216,7 +243,7 @@ export default function AnalyticsDashboard({ darkMode = true }) {
         </ChartCard>
 
         {/* Department Distribution */}
-        <ChartCard title="🏢 Department Distribution" darkMode={darkMode}>
+        <ChartCard title="Department Distribution" darkMode={darkMode}>
           <ResponsiveContainer width="100%" height={320}>
             <PieChart>
               <Pie 
@@ -243,7 +270,7 @@ export default function AnalyticsDashboard({ darkMode = true }) {
         </ChartCard>
 
         {/* Top 10 Salaries */}
-        <ChartCard title="💵 Top 10 Highest Paid" darkMode={darkMode}>
+        <ChartCard title="Top 10 Highest Paid" darkMode={darkMode}>
           <ResponsiveContainer width="100%" height={320}>
             <BarChart data={salaryGraph} layout="vertical">
               <CartesianGrid strokeDasharray="3 3" stroke={darkMode ? '#334155' : '#e2e8f0'} />
@@ -268,7 +295,7 @@ export default function AnalyticsDashboard({ darkMode = true }) {
         </ChartCard>
 
         {/* Tier Distribution */}
-        <ChartCard title="🎯 Performance Tiers" darkMode={darkMode}>
+        <ChartCard title="Performance Tiers" darkMode={darkMode}>
           <ResponsiveContainer width="100%" height={320}>
             <PieChart>
               <Pie 
@@ -301,7 +328,7 @@ export default function AnalyticsDashboard({ darkMode = true }) {
         </ChartCard>
 
         {/* Department Performance Radar */}
-        <ChartCard title="🎯 Department Performance Metrics" darkMode={darkMode}>
+        <ChartCard title="Department Performance Metrics" darkMode={darkMode}>
           <ResponsiveContainer width="100%" height={320}>
             <RadarChart data={departmentPerformance}>
               <PolarGrid stroke={darkMode ? '#334155' : '#e2e8f0'} />
@@ -321,7 +348,7 @@ export default function AnalyticsDashboard({ darkMode = true }) {
         </ChartCard>
 
         {/* Promotion Readiness */}
-        <ChartCard title="🚀 Top 10 Promotion Ready" darkMode={darkMode}>
+        <ChartCard title="Top 10 Promotion Ready" darkMode={darkMode}>
           <ResponsiveContainer width="100%" height={320}>
             <AreaChart data={promotionGraph}>
               <defs>
@@ -393,10 +420,12 @@ function InsightCard({ title, value, icon, color, darkMode }) {
     >
       <div style={{
         position: 'absolute',
-        top: 0,
-        right: 0,
-        fontSize: '48px',
-        opacity: 0.1
+        top: '-10px',
+        right: '-10px',
+        width: '80px',
+        height: '80px',
+        opacity: 0.1,
+        color: color
       }}>
         {icon}
       </div>
