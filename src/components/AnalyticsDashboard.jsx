@@ -158,7 +158,7 @@ export default function AnalyticsDashboard({ darkMode = true }) {
         </div>
       </div>
 
-      {/* Insights Panel */}
+       
       <div style={{
         display: "grid", 
         gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", 
@@ -242,7 +242,7 @@ export default function AnalyticsDashboard({ darkMode = true }) {
           </ResponsiveContainer>
         </ChartCard>
 
-        {/* Department Distribution */}
+      
         <ChartCard title="Department Distribution" darkMode={darkMode}>
           <ResponsiveContainer width="100%" height={320}>
             <PieChart>
@@ -269,7 +269,7 @@ export default function AnalyticsDashboard({ darkMode = true }) {
           </ResponsiveContainer>
         </ChartCard>
 
-        {/* Top 10 Salaries */}
+        
         <ChartCard title="Top 10 Highest Paid" darkMode={darkMode}>
           <ResponsiveContainer width="100%" height={320}>
             <BarChart data={salaryGraph} layout="vertical">
@@ -294,7 +294,7 @@ export default function AnalyticsDashboard({ darkMode = true }) {
           </ResponsiveContainer>
         </ChartCard>
 
-        {/* Tier Distribution */}
+      
         <ChartCard title="Performance Tiers" darkMode={darkMode}>
           <ResponsiveContainer width="100%" height={320}>
             <PieChart>
@@ -327,7 +327,7 @@ export default function AnalyticsDashboard({ darkMode = true }) {
           </ResponsiveContainer>
         </ChartCard>
 
-        {/* Department Performance Radar */}
+       
         <ChartCard title="Department Performance Metrics" darkMode={darkMode}>
           <ResponsiveContainer width="100%" height={320}>
             <RadarChart data={departmentPerformance}>
@@ -347,7 +347,7 @@ export default function AnalyticsDashboard({ darkMode = true }) {
           </ResponsiveContainer>
         </ChartCard>
 
-        {/* Promotion Readiness */}
+      
         <ChartCard title="Top 10 Promotion Ready" darkMode={darkMode}>
           <ResponsiveContainer width="100%" height={320}>
             <AreaChart data={promotionGraph}>

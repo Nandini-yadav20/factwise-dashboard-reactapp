@@ -10,10 +10,10 @@ const PerformanceRenderer = (params) => {
 
   const percentage = (rating / 5) * 100;
 
-  let color = '#ef4444'; // red
-  if (rating >= 4.5) color = '#10b981'; // green
-  else if (rating >= 4.0) color = '#3b82f6'; // blue
-  else if (rating >= 3.5) color = '#f59e0b'; // orange
+  let color = '#ef4444'; 
+  if (rating >= 4.5) color = '#10b981'; 
+  else if (rating >= 4.0) color = '#3b82f6'; 
+  else if (rating >= 3.5) color = '#f59e0b'; 
 
   return (
     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>

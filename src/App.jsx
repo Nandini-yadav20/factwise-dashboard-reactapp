@@ -85,7 +85,7 @@ function App() {
               </h1>
             </div>
 
-            {/* Navigation */}
+          
             <nav style={{ display: 'flex', gap: '8px' }}>
               {['overview', 'table', 'analytics'].map(view => (
                 <button
@@ -152,7 +152,7 @@ function App() {
         }}>
           {activeView === 'overview' && (
             <div style={{ animation: 'fadeIn 0.5s ease' }}>
-              {/* Stats Grid */}
+             
               <div style={{
                 display: 'grid',
                 gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
