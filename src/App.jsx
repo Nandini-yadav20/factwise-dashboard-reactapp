@@ -1,3 +1,4 @@
+import AnalyticsDashboard from "./components/AnalyticsDashboard"
 import Dashboard from "./components/Dashboard"
 import StatsCard from "./components/StatCard"
 
@@ -10,6 +11,7 @@ function App() {
       <div>
         <Dashboard/>
         <StatsCard/>
+        <AnalyticsDashboard/>
        </div>
     </>
   )
